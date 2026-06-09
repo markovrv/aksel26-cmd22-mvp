@@ -83,7 +83,7 @@ export function LoginPage() {
 
         <div className="mt-6 space-y-3">
           <p className="text-xs font-black uppercase tracking-widest text-slate-400">
-            Тестовые пользователи
+            Тестовые пользователи:
           </p>
           {DEMO_USERS.map((user) => (
             <button
