@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qualify-app
+    ports:
+      - "9626:8000"
+    environment:
+      DB_NAME: ${POSTGRES_DB:-qualify}
+      DB_USER: ${POSTGRES_USER:-qualify}
+      DB_PASS: ${POSTGRES_PASSWORD:-qualify}
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_SEED_PATH: /docker-entrypoint-initdb.d/insert.sql
+      PUBLIC_API_BASE_URL: ""
+    volumes:
+      - postgres-data:/var/lib/postgresql
+      - ./back/images:/app/images
+
+volumes:
+  postgres-data:

@@ -1,0 +1,8 @@
+vk_api
+python-dotenv
+psycopg2-binary
+pandas
+numpy
+torch
+torch-geometric
+pyvis
